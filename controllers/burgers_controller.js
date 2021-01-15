@@ -1,9 +1,21 @@
-//import express and burger.js
-const burger = require("../models/burger");
+//import express
 const express = require("express");
 
-//reate the `router` for the app, and export
-//the `router` at the end of your file.
-const router = "something here";
+//create the `router` for the app, and export
+//the `router` at the end of the file.
+const router = express.Router();
 
-module.export = router;
+//import burger
+const burger = require("../models/burger");
+
+router.get("/", function (req, res) {
+  burger.all(function (data) {
+    var hbsObject = {
+      burgers: data,
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
+});
+
+module.exports = router;
