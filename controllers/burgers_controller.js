@@ -33,7 +33,7 @@ router.post("/api/burgers", function (req, res) {
 //update the selected burger to devoured = true
 router.put("/api/burgers/:id", function (req, res) {
   let condition = "id = " + req.params.id;
-
+  console.log(req.params);
   burger.update(
     {
       devoured: true,
@@ -49,17 +49,16 @@ router.put("/api/burgers/:id", function (req, res) {
   );
 });
 
-// router.delete("/api/burgers/:id", function (req, res) {
-//   burger.delete(
-//     ["id"],
-//     [req.body.id, req.body.devoured === "true"],
-
-//     function (data) {
-//       console.log("this is my console log", data);
-//       res.json({ id: data.insertId });
-//       // res.json({ id: result.insertId });
-//     }
-//   );
-// });
+router.delete("/api/burgers/:id", function (req, res) {
+  let condition = "id = " + req.params.id;
+  burger.delete(condition, function (result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
 
 module.exports = router;

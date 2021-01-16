@@ -6,7 +6,9 @@ test
 <ul>
     {{#each burgers}}
     <li>
-        {{burger_name}} <button class="devour" data-id={{id}}>Devour</button>
+        {{burger_name}} <button class="devour" data-id={{id}}>Devour</button> <button class="delete-burger"
+            data-id={{id}}>Delete
+            Burger</button>
         {{devoured}}
     </li>
     {{/each}}
@@ -30,7 +32,7 @@ test
 
 <div>
     <!-- For now, just adding id in to delete a burger -->
-    <button class=".delete-burger">Delete Burger</button>
+
 
 
 
