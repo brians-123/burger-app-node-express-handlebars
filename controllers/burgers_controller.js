@@ -30,18 +30,24 @@ router.post("/api/burgers", function (req, res) {
   );
 });
 
-// router.put("/api/burgers/:id", function (req, res) {
-//   burger.update(
-//     ["id", "devoured"],
-//     [req.body.burger_name, req.body.devoured === "true"],
+//update the selected burger to devoured = true
+router.put("/api/burgers/:id", function (req, res) {
+  let condition = "id = " + req.params.id;
 
-//     function (data) {
-//       console.log("this is my console log", data);
-//       res.json({ id: data.insertId });
-//       // res.json({ id: result.insertId });
-//     }
-//   );
-// });
+  burger.update(
+    {
+      devoured: true,
+    },
+    condition,
+    function (result) {
+      if (result.changedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+    }
+  );
+});
 
 // router.delete("/api/burgers/:id", function (req, res) {
 //   burger.delete(

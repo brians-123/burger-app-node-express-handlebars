@@ -6,7 +6,7 @@ test
 <ul>
     {{#each burgers}}
     <li>
-        {{burger_name}} <button>Devour</button>
+        {{burger_name}} <button class="devour" data-id={{id}}>Devour</button>
         {{devoured}}
     </li>
     {{/each}}
