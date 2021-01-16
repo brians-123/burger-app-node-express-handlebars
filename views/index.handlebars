@@ -1,28 +1,38 @@
 <!--Setup the `index.handlebars` to have the template that Handlebars can render onto. -->
 test
-<h2>Add a Burger</h2>
-<form class="create-form">
 
-    <div class="form-group">
-        <label for="new-burger">Burger Name:</label>
-        <input type="text" id="new-burger" name="burger-input">
-    </div>
 
-    {{!-- <div class="form-group">
-        <label for="sleepy">Sleepy?</label><br>
-        <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-        <input type="radio" name="sleepy" value="0"> Awake
-    </div> --}}
-
-    <button type="submit">Add Burger</button>
-</form>
-
+<h2>Devour a burger</h2>
 <ul>
     {{#each burgers}}
     <li>
-        {{burger_name}}
+        {{burger_name}} <button>Devour</button>
         {{devoured}}
     </li>
     {{/each}}
 </ul>
-<!-- Create a button in `index.handlebars` that will submit the user input into the database. -->
+
+
+<div>
+    <!-- Create a button in `index.handlebars` that will submit the user input into the database. -->
+    <h2>Add a Burger</h2>
+    <form class="create-form">
+
+        <div class="form-group">
+            <label for="new-burger">Burger Name:</label>
+            <input type="text" id="new-burger" name="burger-input">
+        </div>
+
+        <button type="submit" id="devour-btn">Add Burger</button>
+    </form>
+
+</div>
+
+<div>
+    <!-- For now, just adding id in to delete a burger -->
+    <button class=".delete-burger">Delete Burger</button>
+
+
+
+
+</div>

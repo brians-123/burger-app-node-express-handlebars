@@ -1,6 +1,6 @@
 //require the express npm package
 const express = require("express");
-const exphbs = require("express-handlebars");
+
 const connection = require("./config/connection");
 //is this needed in the server js file?
 var mysql = require("mysql");
@@ -20,6 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Setup Handlebars.
+const exphbs = require("express-handlebars");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
