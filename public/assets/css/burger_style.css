@@ -1,3 +1,37 @@
+body {
+  background-color: burlywood;
+}
+.new-burger-section {
+  text-align: center;
+}
+/* .list-boxes {
+  border: solid black 1px;
+  box-sizing: border-box;
+  padding: 300px;
+  display: inline; 
+}
 h1 {
   font-size: large;
+}
+ul {
+  list-style-type: none;
+}
+li {
+}
+.burger-box {
+  border: solid black 1px;
+  box-sizing: border-box;
+  display: inline;
+  padding: 1px;
+}
+.patrick {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+} 
+*/
+.list-boxes {
+  box-sizing: border-box;
+  border: solid black 1px;
+  box-sizing: border-box;
 }
