@@ -30,7 +30,6 @@ Go here
 ## License <a id="license"></a> :copyright:
 
 None
-This application is covered under the None license.
 
 ## Contribute <a id="contribute"></a> :heavy_plus_sign: :heavy_plus_sign:
 
